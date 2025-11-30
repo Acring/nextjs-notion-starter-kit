@@ -1,104 +1,123 @@
-/* prism theme adjustments */
+/* prism theme adjustments for Cassette Futurism */
 
 .notion-code {
-  background-color: rgba(249, 250, 251, 1);
-  border: 1px solid rgba(229, 231, 235, 1);
-  border-radius: 0.375rem;
+  background-color: #000 !important;
+  border: 4px solid var(--fg-color-2) !important;
+  border-radius: 0 !important;
   padding: 1.5em !important;
+  box-shadow: none !important;
 }
 
 .dark-mode .notion-code {
-  background-color: rgba(17, 24, 39, 1);
-  border-color: rgba(55, 65, 81, 1);
+  background-color: #000 !important;
+  border-color: var(--fg-color-2) !important;
 }
+
 .notion code {
-  color: rgba(31, 41, 55, 1);
+  color: var(--fg-color) !important;
   border: 0 none !important;
   box-shadow: none !important;
   background: none !important;
   padding: 0 !important;
+  font-family: var(--notion-font) !important;
+  text-shadow: 0 0 2px rgba(255, 176, 0, 0.4) !important;
 }
+
 .dark-mode .notion code {
-  color: rgba(229, 231, 235, 1);
+  color: var(--fg-color) !important;
 }
 
+/* Inline Code */
+.notion .notion-inline-code,
 .dark-mode .notion .notion-inline-code {
-  background: rgb(71, 76, 80) !important;
-  color: #ff4081;
+  color: #000 !important;
+  background: var(--fg-color) !important;
+  border: none !important;
   padding: 0.2em 0.4em !important;
+  border-radius: 0 !important;
+  font-family: var(--notion-font) !important;
+  font-weight: bold;
 }
 
-.notion .notion-inline-code {
-  color: #ff4081;
-  background: rgba(127, 122, 107, 0.1) !important;
-  padding: 0.2em 0.4em !important;
-}
+/* Syntax Highlighting - Retro Terminal */
 
-.token.cdata,
+.token.comment,
+.token.prolog,
 .token.doctype,
-.token.prolog {
-  color: rgba(55, 65, 81, 1);
+.token.cdata {
+  color: var(--fg-color-2);
+  font-style: italic;
 }
-.token.comment {
-  color: #5b9b4c;
-}
-.dark-mode .token.cdata,
-.dark-mode .token.doctype,
-.dark-mode .token.prolog {
-  color: rgba(209, 213, 219, 1);
-}
+
 .token.punctuation {
-  color: rgba(55, 65, 81, 1);
+  color: var(--fg-color-1);
 }
-.dark-mode .token.punctuation {
-  color: rgba(209, 213, 219, 1);
+
+.token.namespace {
+  opacity: 0.7;
 }
-.token.boolean,
-.token.constant,
-.token.deleted,
-.token.number,
+
 .token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
 .token.symbol,
-.token.tag {
-  color: rgba(16, 185, 129, 1);
+.token.deleted {
+  color: var(--accent-color); /* Signal Orange */
+  text-shadow: none;
 }
-.token.attr-name,
-.token.builtin,
-.token.char,
-.token.inserted,
+
 .token.selector,
-.token.string {
-  color: rgba(139, 92, 246, 1);
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--accent-color-2); /* Muted Teal */
+  text-shadow: none;
 }
-.language-css .token.string,
-.style .token.string,
-.token.entity,
+
 .token.operator,
-.token.url {
-  color: rgba(245, 158, 11, 1);
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--fg-color);
 }
+
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: rgba(59, 130, 246, 1);
+  color: var(--fg-color-0); /* Bright Amber */
+  font-weight: bold;
 }
-.token.class-name,
-.token.function {
-  color: rgba(236, 72, 153, 1);
+
+.token.function,
+.token.class-name {
+  color: #fff; /* White */
 }
-.token.important,
+
 .token.regex,
+.token.important,
 .token.variable {
-  color: rgba(245, 158, 11, 1);
+  color: var(--accent-color);
 }
-code[class*='language-'],
-pre[class*='language-'] {
-  color: rgba(31, 41, 55, 1);
+
+.token.important,
+.token.bold {
+  font-weight: bold;
 }
-.dark-mode code[class*='language-'],
-.dark-mode pre[class*='language-'] {
-  color: rgba(249, 250, 251, 1);
+
+.token.italic {
+  font-style: italic;
 }
+
+.token.entity {
+  cursor: help;
+}
+
+/* Scrollbar hiding for code blocks */
 pre::-webkit-scrollbar {
   display: none;
 }
@@ -106,13 +125,8 @@ pre {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.token.operator,
-.token.entity,
-.token.url,
-.token.variable {
-  background: none;
-}
 
+/* Remove default backgrounds */
 pre[class*='language-'] > code {
   border-left: 0 none !important;
   box-shadow: none !important;

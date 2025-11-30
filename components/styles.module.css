@@ -17,12 +17,9 @@
 
   font-size: 16px;
   line-height: 1.5;
-  color: rgb(55, 53, 47);
-  caret-color: rgb(55, 53, 47);
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
-    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
-  background-color: var(--bg-color);
+  color: var(--fg-color);
+  caret-color: var(--accent-color);
+  font-family: var(--font-sans);
 }
 
 .loadingIcon {
@@ -30,7 +27,7 @@
   display: block;
   width: 24px;
   height: 24px;
-  color: rgba(55, 53, 47, 0.4);
+  color: var(--accent-color);
 }
 
 .main {
@@ -49,17 +46,24 @@
   width: 100%;
   max-width: 1100px;
   margin: auto auto 0;
-  padding: 8px;
+  padding: 24px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  
+  border-top: 4px solid var(--fg-color-2);
+  background: var(--bg-color-1);
+  margin-top: 4rem;
 }
 
 .copyright {
-  font-size: 80%;
+  font-size: 1em;
   padding: 0.5em;
+  color: var(--fg-color-1);
+  font-family: var(--notion-font);
+  text-transform: uppercase;
 }
 
 .settings,
@@ -70,11 +74,14 @@
 .settings a,
 .social a {
   cursor: pointer;
-  font-size: 2em;
+  font-size: 1.8em;
   display: inline-flex;
-  padding: 0.25em;
-  margin-right: 1vw;
-  transition: color 250ms ease-out;
+  padding: 0.4em;
+  margin-right: 0.5vw;
+  transition: none;
+  color: var(--fg-color-1);
+  border-radius: 0;
+  border: 2px solid transparent;
 }
 
 .settings a:last-of-type,
@@ -84,45 +91,32 @@
 
 .settings a:hover,
 .social a:hover {
-  transition: color 50ms ease-out;
+  color: var(--bg-color);
+  background: var(--fg-color);
+  border-color: var(--fg-color);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+  transform: translate(-2px, -2px);
 }
 
 .toggleDarkMode:hover {
-  color: #2795e9;
+  color: var(--bg-color);
+  background: var(--accent-color-2) !important;
+  border-color: var(--accent-color-2) !important;
 }
 
-.twitter:hover {
-  color: #2795e9;
-}
-
-.mastodon:hover {
-  color: #5a4be1;
-}
-
-.zhihu:hover {
-  color: #0066ff;
-}
-
-.github:hover {
-  color: #c9510c;
-}
-
-.youtube:hover {
-  color: #ff0000;
-}
-
-.linkedin:hover {
-  color: #0077b5;
-}
-
-.newsletter:hover {
-  color: #777777;
-}
+.twitter:hover { background: #1da1f2; color: white; border-color: #1da1f2; }
+.mastodon:hover { background: #6364ff; color: white; border-color: #6364ff; }
+.zhihu:hover { background: #0084ff; color: white; border-color: #0084ff; }
+.github:hover { background: #ffffff; color: black; border-color: #ffffff; }
+.youtube:hover { background: #ff0000; color: white; border-color: #ff0000; }
+.linkedin:hover { background: #0077b5; color: white; border-color: #0077b5; }
+.newsletter:hover { background: #f5c518; color: black; border-color: #f5c518; }
 
 .comments {
   width: 100%;
-  margin-top: 2em;
-  border-top: 1px solid var(--fg-color-0);
+  margin-top: 4em;
+  border-top: 4px solid var(--fg-color-2);
+  padding-top: 2em;
 }
 
 @media only screen and (max-width: 566px) {
@@ -158,9 +152,11 @@
   display: inline-flex;
   padding: 12px;
   margin-right: 1vw;
-  border-radius: 50%;
+  border-radius: 0;
   background: transparent;
-  transition: all 250ms ease-out;
+  transition: none;
+  color: var(--fg-color-1);
+  border: 2px solid transparent;
 }
 
 .pageActions a:last-of-type {
@@ -168,17 +164,23 @@
 }
 
 .pageActions a:hover {
-  transition: all 50ms ease-out;
+  transition: none;
 }
 
 .likeTweet:hover {
-  background: #f6e3e8;
-  color: #e0265e;
+  background: #e0265e;
+  color: white;
+  border-color: #e0265e;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+  transform: translate(-2px, -2px);
 }
 
 .retweet:hover {
-  color: #19bf64;
-  background: #e5f2e8;
+  color: white;
+  background: #19bf64;
+  border-color: #19bf64;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+  transform: translate(-2px, -2px);
 }
 
 @media (max-width: 1360px) {

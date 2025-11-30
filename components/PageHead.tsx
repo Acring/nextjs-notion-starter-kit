@@ -35,24 +35,16 @@ export function PageHead({
         content='width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
       />
 
-      <meta name='mobile-web-app-capable' content='yes' />
-      <meta name='apple-mobile-web-app-status-bar-style' content='black' />
-
-      <meta
-        name='theme-color'
-        media='(prefers-color-scheme: light)'
-        content='#fefffe'
-        key='theme-color-light'
-      />
-      <meta
-        name='theme-color'
-        media='(prefers-color-scheme: dark)'
-        content='#2d3439'
-        key='theme-color-dark'
-      />
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#1a1a1a" key="theme-color-light"/>
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" key="theme-color-dark"/>
 
       <meta name='robots' content='index,follow' />
       <meta property='og:type' content='website' />
+
+      {/* Google Fonts: VT323, Share Tech Mono, Space Mono */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet" />
 
       {site && (
         <>
