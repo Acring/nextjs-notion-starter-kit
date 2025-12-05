@@ -19,7 +19,6 @@ import styles from './styles.module.css'
 export function FooterImpl() {
   const [hasMounted, setHasMounted] = React.useState(false)
   const { isDarkMode, toggleDarkMode } = useDarkMode()
-  const currentYear = new Date().getFullYear()
 
   const onToggleDarkMode = React.useCallback(
     (e: any) => {
