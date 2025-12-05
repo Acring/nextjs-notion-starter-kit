@@ -92,11 +92,7 @@ export const isPreviewImageSupportEnabled: boolean = getSiteConfig(
 )
 
 // Optional whether or not to include the Notion ID in page URLs or just use slugs
-export const includeNotionIdInUrls: boolean = getSiteConfig(
-  'includeNotionIdInUrls',
-  !!isDev
-)
-
+export const includeNotionIdInUrls = true
 export const navigationStyle: NavigationStyle = getSiteConfig(
   'navigationStyle',
   'default'
